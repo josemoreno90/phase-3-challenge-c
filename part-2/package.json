@@ -1,0 +1,17 @@
+{
+  "name": "part-2",
+  "version": "1.0.0",
+  "description": "Build a command line tool that emulates a hotel management system for tracking room bookings.",
+  "main": "hotel.js",
+  "scripts": {
+    "test": "mocha test",
+    "db-init": "psql < schema.sql  && psql < load_data.sql",
+    "testdb-init": "psql < schema_test.sql && psql < load_data_test.sql"
+  },
+  "author": "Jose Moreno",
+  "license": "ISC",
+  "dependencies": {
+    "bluebird": "^3.5.1",
+    "pg-promise": "^7.0.3"
+  }
+}
