@@ -1,7 +1,6 @@
 const database = require('./database')
 const print = require('node-print')
 
-
 const optionalInput = process.argv[3];
 
 

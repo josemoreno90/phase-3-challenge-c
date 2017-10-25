@@ -1,7 +1,7 @@
 {
   "name": "part-2",
   "version": "1.0.0",
-  "description": "Build a command line tool that emulates a hotel management system for tracking room bookings.",
+  "description": "Build a command line tool that mimicks a hotel management system for tracking room bookings.",
   "main": "hotel.js",
   "scripts": {
     "test": "mocha test",
