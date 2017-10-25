@@ -1,17 +1,17 @@
 DROP DATABASE IF EXISTS hotel_db;
 CREATE DATABASE hotel_db;
 
-\c hotel_db;
+\c hotel_db
 
 CREATE TABLE guests(
   id SERIAL PRIMARY KEY,
-  name VARCHAR(250),
-  email VARCHAR(250)
+  name VARCHAR(40),
+  email VARCHAR(40)
 );
 
 CREATE TABLE rooms(
   id SERIAL PRIMARY KEY,
-  room_number VARCHAR(250),
+  room_number VARCHAR(40),
   capacity INTEGER,
   available BOOLEAN DEFAULT true
 );
