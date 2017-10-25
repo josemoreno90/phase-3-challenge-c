@@ -10,7 +10,6 @@ switch (process.argv[2]) {
     database.guests().then((res) => {
      print.pt(res)
    })
-
     break;
 
   case 'rooms':
@@ -21,8 +20,7 @@ switch (process.argv[2]) {
       .catch(error => console.log(error));
       break;
     } else if (optionalInput === '--available') {
-      database.availableRooms()
-      .then(res => {
+      database.availableRooms().then(res => {
         print.pt(res)
       })
       .catch(error => console.log(error));
@@ -35,17 +33,13 @@ switch (process.argv[2]) {
 
   case 'bookings':
     if (!optionalInput) {
-      bookings()
-      .then(res => {
-        client.end();
+      database.bookings().then(res => {
         print.pt(res)
       })
-      .catch(err => console.log(error));
+      .catch(err => console.log(err));
       break;
     } else {
-      bookingsForRoom(optionalInput)
-      .then(res => {
-        client.end();
+      database.bookingsForRoom(optionalInput).then(res => {
         print.pt(res)
       })
       .catch(error => console.log(error));
@@ -53,7 +47,6 @@ switch (process.argv[2]) {
     }
 
   default:
-    console.log('Please enter a command after hotel.');
+    console.log('Please enter a command after hotel.js');
     console.log('Commands are guests, rooms, rooms --available, bookings, and bookings followed by a room.');
-    client.end();
 };

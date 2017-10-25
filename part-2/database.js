@@ -18,7 +18,15 @@ module.exports = {
     return db.manyOrNone('SELECT room_number, name, check_in, check_out FROM bookings\
                           JOIN rooms ON rooms.id = bookings.room_id\
                           JOIN guests ON guests.id = bookings.guest_id\
-                          WHERE check_out > CURRENT_DATE')
-  }
+                          WHERE check_out > CURRENT_DATE\
+                          ORDER BY bookings.check_out')
 
+  },
+  bookingsForRoom: (roomNumber) => {
+    return db.manyOrNone(`SELECT room_number, name, check_in, check_out FROM bookings
+                        JOIN rooms ON rooms.id = bookings.room_id
+                        JOIN guests ON guests.id = bookings.guest_id
+                        WHERE check_out > CURRENT_DATE
+                        AND room_number = $1`, [roomNumber])
+  }
 }
