@@ -7,10 +7,10 @@ const db = pgp(connectionString)
 
 module.exports = {
   guests: () => {
-    return db.manyOrNone('SELECT * FROM guests')
+    return db.manyOrNone('SELECT id AS "ID", name AS "Guest Name", email AS "Email" FROM guests')
   },
   rooms: () => {
-    return db.manyOrNone('SELECT room_number, capacity, available FROM rooms')
+    return db.manyOrNone('SELECT room_number AS "Room #", capacity, available FROM rooms')
   },
   availableRooms: () => {
     return db.manyOrNone('SELECT room_number, capacity, available FROM rooms WHERE available = true')
