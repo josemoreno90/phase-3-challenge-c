@@ -4,6 +4,7 @@ const pgp = require('pg-promise')(options)
 const connectionString = 'postgres://localhost:5432/hotel_db'
 const db = pgp(connectionString)
 
+
 module.exports = {
   guests: () => {
     return db.manyOrNone('SELECT * FROM guests')
