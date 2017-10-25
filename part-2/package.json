@@ -12,6 +12,7 @@
   "license": "ISC",
   "dependencies": {
     "bluebird": "^3.5.1",
+    "node-print": "0.0.4",
     "pg-promise": "^7.0.3"
   }
 }
